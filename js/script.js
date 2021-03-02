@@ -18,13 +18,13 @@ const $input = $('input[type="text"]');
 
 $('form').on('submit', handleGetData);
 
-// '&units=imperial'
+
 function handleGetData(event){
 
     event.preventDefault();
     userInput = $input.value= '';
   
-    $.ajax(BASE_URL + 'q='+ userInput + '&appid=' + API_KEY )
+    $.ajax(BASE_URL + 'q='+ userInput + '&appid=' + API_KEY +'&units=imperial' )
     .then(
         (data)=>{
             weatherData = data;
